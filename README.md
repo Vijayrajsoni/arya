@@ -4,7 +4,7 @@ ARYA Agriculture is a web-based agriculture platform built with **Node.js, Expre
 
 ## 🚀 Live Demo
 
-**Live Website:** https://arya-u037.onrender.com
+**Live Website:** https://aryaagriculture.duckdns.org/
 
 ## ✨ Features
 
