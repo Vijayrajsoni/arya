@@ -1,239 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arya Agricultural</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+    <title>Arya Agricultural</title>
 
-body{
-    background:#f5f8f1;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-/* ================= HEADER ================= */
+        body {
+            background: #f5f8f1;
+        }
 
-header{
-    width:100%;
-    background:linear-gradient(90deg,#1b5e20,#2e7d32,#43a047);
-    color:#fff;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 12px rgba(0,0,0,.2);
-}
+        /* ================= HEADER ================= */
 
-.navbar{
-    width:90%;
-    max-width:1400px;
-    margin:auto;
-    height:80px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+        header {
+            width: 100%;
+            background: linear-gradient(90deg, #1b5e20, #2e7d32, #43a047);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+        }
 
-/* ================= LOGO ================= */
+        .navbar {
+            width: 92%;
+            max-width: 1400px;
+            min-height: 80px;
+            margin: auto;
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-.logo img{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #fff;
-    background:#fff;
-}
+        /* ================= LOGO ================= */
 
-.logo h2{
-    font-size:28px;
-    color:#fff;
-    font-weight:bold;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
 
-.logo span{
-    color:#ffd54f;
-}
+        .logo img {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            background: white;
+        }
 
-/* ================= MENU ================= */
+        .logo h2 {
+            font-size: 25px;
+            color: white;
+            white-space: nowrap;
+        }
 
-nav ul{
-    display:flex;
-    align-items:center;
-    gap:25px;
-    list-style:none;
-}
+        .logo h2 span {
+            color: #ffd54f;
+        }
 
-nav ul li{
-    list-style:none;
-}
+        /* ================= NAVIGATION ================= */
 
-nav ul li a{
-    text-decoration:none;
-    color:#fff;
-    font-size:16px;
-    font-weight:600;
-    transition:.3s;
-    padding:8px 12px;
-    border-radius:8px;
-}
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
 
-nav ul li a:hover{
-    background:rgba(255,255,255,.15);
-    color:#ffeb3b;
-}
+        nav ul li {
+            list-style: none;
+        }
 
-/* ================= USER BUTTON ================= */
+        nav ul li a {
+            display: block;
 
-.login-btn{
-    display:flex;
-    align-items:center;
-}
+            color: white;
+            text-decoration: none;
 
-.login-btn a{
-    text-decoration:none;
-    background:#ffeb3b;
-    color:#1b5e20;
-    padding:10px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    transition:.3s;
-    white-space:nowrap;
-    box-shadow:0 4px 10px rgba(0,0,0,.2);
-}
+            font-size: 15px;
+            font-weight: 600;
 
-.login-btn a:hover{
-    background:#fff;
-    transform:translateY(-2px);
-}
+            padding: 9px 10px;
+            border-radius: 8px;
 
-/* Welcome User */
+            transition: 0.3s;
+        }
 
-.login-btn span{
-    color:#1b5e20;
-    font-size:15px;
-    font-weight:700;
-}
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffeb3b;
+        }
 
-/* ================= RESPONSIVE ================= */
+        /* ================= USER BUTTON ================= */
 
-@media(max-width:992px){
+        .login-btn {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
 
-    .navbar{
-        flex-direction:column;
-        height:auto;
-        padding:20px 0;
-    }
+        .login-btn a {
+            display: flex;
+            align-items: center;
 
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:15px;
-        margin:20px 0;
-    }
+            background: #ffeb3b;
+            color: #1b5e20;
 
-    .login-btn{
-        margin-top:10px;
-    }
+            padding: 10px 15px;
+            border-radius: 30px;
 
-}
+            text-decoration: none;
+            font-weight: bold;
 
-@media(max-width:768px){
+            white-space: nowrap;
 
-    .logo{
-        flex-direction:column;
-        text-align:center;
-    }
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-    .logo h2{
-        font-size:22px;
-    }
+            transition: 0.3s;
+        }
 
-    nav ul{
-        flex-direction:column;
-        width:100%;
-    }
+        .login-btn a:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
 
-    nav ul li{
-        width:100%;
-        text-align:center;
-    }
+        .login-btn span {
+            color: #1b5e20;
+            font-size: 14px;
+            font-weight: 700;
+        }
 
-    nav ul li a{
-        display:block;
-        width:100%;
-        padding:12px;
-    }
+        /* ================= HAMBURGER ================= */
 
-    .login-btn a{
-        padding:10px 18px;
-        font-size:14px;
-    }
+        .menu-toggle {
+            display: none;
 
-}
-</style>
+            background: transparent;
+            border: none;
 
+            color: white;
+            font-size: 32px;
+
+            cursor: pointer;
+
+            padding: 5px;
+        }
+
+        /* ================================================= */
+        /* ================= TABLET ======================== */
+        /* ================================================= */
+
+        @media (max-width: 1200px) {
+
+            .navbar {
+                width: 94%;
+            }
+
+            .logo h2 {
+                font-size: 22px;
+            }
+
+            nav ul {
+                gap: 2px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 8px 7px;
+            }
+
+            .login-btn a {
+                padding: 9px 12px;
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= MOBILE ======================== */
+        /* ================================================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                min-height: 70px;
+                position: relative;
+            }
+
+            /* LOGO */
+
+            .logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .logo h2 {
+                font-size: 20px;
+            }
+
+            /* HAMBURGER */
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+
+            /* NAVIGATION */
+
+            nav {
+                display: none;
+
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                background: #1b5e20;
+
+                padding: 15px;
+
+                box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+            }
+
+            /* JS SE OPEN HOGA */
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: stretch;
+
+                width: 100%;
+                gap: 5px;
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav ul li a {
+                width: 100%;
+                text-align: center;
+
+                padding: 12px;
+
+                font-size: 16px;
+            }
+
+            nav ul li a:hover {
+                background: #2e7d32;
+            }
+
+            /* LOGIN BUTTON */
+
+            .login-btn {
+                display: none;
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= SMALL MOBILE ================= */
+        /* ================================================= */
+
+        @media (max-width: 500px) {
+
+            .navbar {
+                width: 94%;
+                min-height: 65px;
+            }
+
+            .logo {
+                gap: 7px;
+            }
+
+            .logo img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .logo h2 {
+                font-size: 17px;
+            }
+
+            .menu-toggle {
+                font-size: 28px;
+            }
+
+            nav {
+                top: 65px;
+            }
+        }
+
+
+        /* ================================================= */
+        /* ================= VERY SMALL ==================== */
+        /* ================================================= */
+
+        @media (max-width: 350px) {
+
+            .logo h2 {
+                font-size: 15px;
+            }
+
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .menu-toggle {
+                font-size: 25px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
 <header>
 
-<div class="navbar">
+    <div class="navbar">
 
-<div class="logo">
+        <!-- ================= LOGO ================= -->
 
-<img src="/image/Untitled - June 30, 2026 at 23.01.56 (1).png" alt="Logo">
+        <div class="logo">
 
-<h2>Arya <span>Agricultural</span></h2>
+            <img
+                src="/image/Untitled - June 30, 2026 at 23.01.56 (1).png"
+                alt="Arya Agricultural Logo"
+            >
 
-</div>
+            <h2>
+                Arya <span>Agricultural</span>
+            </h2>
 
-<nav>
-
-<ul>
-
-<li><a href="/home">🏠 Home</a></li>
-
-<li><a href="/about">ℹ️ About</a></li>
-
-<li><a href="/product">🌾 Products</a></li>
-
-<li><a href="/services">🚜 Services</a></li>
-<li><a href="/news">📰 News</a></li>
-<li><a href="/cart">🛒 Cart</a></li>
-<li><a href="/contact">📞 Contact</a></li>
-<li><a href="/login">🔓 Logout</a></li>
-<li><a href="/login">👤 <%= ("login") %></a></li>
-</ul>
-
-</nav>
-
-<div class="login-btn">
-
-<a href="#"><% if(user){ %>
-
-    <span>👤Welcome, <%= user.name %></span>
+        </div>
 
 
-<% } %></a>
+        <!-- ================= HAMBURGER ================= -->
 
-</div>
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open Menu"
+        >
+            ☰
+        </button>
 
-</div>
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav id="mobileNav">
+
+            <ul>
+
+                <li>
+                    <a href="/home">🏠 Home</a>
+                </li>
+
+                <li>
+                    <a href="/about">ℹ️ About</a>
+                </li>
+
+                <li>
+                    <a href="/product">🌾 Products</a>
+                </li>
+
+                <li>
+                    <a href="/services">🚜 Services</a>
+                </li>
+
+                <li>
+                    <a href="/news">📰 News</a>
+                </li>
+
+                <li>
+                    <a href="/cart">🛒 Cart</a>
+                </li>
+
+                <li>
+                    <a href="/contact">📞 Contact</a>
+                </li>
+
+                <li>
+                    <a href="/login">🔓 Logout</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- ================= USER ================= -->
+
+        <div class="login-btn">
+
+            <% if (user) { %>
+
+                <a href="#">
+                    <span>
+                        👤 Welcome, <%= user.name %>
+                    </span>
+                </a>
+
+            <% } else { %>
+
+                <a href="/login">
+                    👤 Login
+                </a>
+
+            <% } %>
+
+        </div>
+
+    </div>
 
 </header>
+
+
+<!-- ================= MOBILE MENU JS ================= -->
+
+<script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuToggle.addEventListener("click", function () {
+
+        mobileNav.classList.toggle("active");
+
+        if (mobileNav.classList.contains("active")) {
+
+            menuToggle.innerHTML = "✕";
+            menuToggle.setAttribute("aria-label", "Close Menu");
+
+        } else {
+
+            menuToggle.innerHTML = "☰";
+            menuToggle.setAttribute("aria-label", "Open Menu");
+
+        }
+
+    });
+
+
+    /* Menu link click hone ke baad menu close */
+
+    document.querySelectorAll("#mobileNav a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileNav.classList.remove("active");
+
+            menuToggle.innerHTML = "☰";
+
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>
