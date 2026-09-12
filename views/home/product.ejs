@@ -1,0 +1,396 @@
+<%- include("header") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Products | Arya Agricultural</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f9f3;
+}
+
+/* Hero Section */
+
+.hero{
+    height:320px;
+    background:linear-gradient(rgba(0,90,0,.7),rgba(0,90,0,.7)),
+    url("/image/OIP\ \(3\).webp") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+/* Product Section */
+
+.products{
+    width:90%;
+    max-width:1300px;
+    margin:70px auto;
+}
+
+.products h2{
+    text-align:center;
+    color:#2e7d32;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.products p{
+    text-align:center;
+    color:#666;
+    margin-bottom:45px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+/* Card */
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-body h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+.card-body p{
+    color:#555;
+    line-height:1.7;
+    text-align:left;
+    margin-bottom:20px;
+}
+
+.price{
+    color:#ff5722;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#2e7d32;
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1b5e20;
+}
+
+/* Footer */
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:60px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+}
+/* Search Box */
+
+.search-box{
+
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-bottom:40px;
+
+}
+
+.search-box input{
+
+    width:450px;
+    max-width:90%;
+    padding:15px 20px;
+    font-size:18px;
+    border:2px solid #2e7d32;
+    border-radius:40px;
+    outline:none;
+    transition:.3s;
+
+}
+
+.search-box input:focus{
+
+    box-shadow:0 0 15px rgba(46,125,50,.4);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Our Agricultural Products</h1>
+
+<p>Providing Quality Products for Better Farming & Higher Yield 🌾</p>
+
+</div>
+
+
+</section>
+
+<section class="products">
+
+<h2>Featured Products</h2>
+
+<p>Choose from our premium range of agricultural products.</p>
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchProduct"
+        placeholder="🔍 Search Products..."
+        onkeyup="searchProduct()">
+
+</div>
+
+<div class="product-grid">
+
+<div class="card product-card">
+
+<img src="/image/prod.jpg" alt="Seeds">
+
+<div class="card-body">
+
+<h3>🌱 Premium Seeds</h3>
+
+<p>High-quality certified seeds with excellent germination and productivity.</p>
+
+<div class="price">₹450 / Pack</div>
+
+<a href="/contact" class="btn">Buy Now</a>
+
+</div>
+
+</div>
+
+<div class="card product-card">
+
+<img src="/image/OIP (4).webp" alt="Fertilizer">
+
+<div class="card-body">
+
+<h3>🧪 Organic Fertilizer</h3>
+
+<p>Improve soil fertility and crop growth with eco-friendly fertilizers.</p>
+
+<div class="price">₹850 / Bag</div>
+
+<a href="/contact" class="btn">Buy Now</a>
+
+</div>
+
+</div>
+
+<div class="card product-card">
+
+<img src="/image/OIP (5).webp" alt="Pesticide">
+
+<div class="card-body">
+
+<h3>🛡️ Crop Protection</h3>
+
+<p>Protect your crops against insects, diseases, and weeds effectively.</p>
+
+<div class="price">₹650 / Bottle</div>
+
+<a href="/contact" class="btn">Buy Now</a>
+
+</div>
+
+</div>
+
+<div class="card product-card">
+
+<img src="/image/Shovel.webp" alt="Tools">
+
+<div class="card-body">
+
+<h3>🚜 Farming Tools</h3>
+
+<p>Modern agricultural tools for efficient farming and better productivity.</p>
+
+<div class="price">₹1,250</div>
+
+<a href="/contact" class="btn">Buy Now</a>
+
+</div>
+
+</div>
+
+<div class="card product-card">
+
+<img src="/image/OIP (6).webp" alt="Irrigation">
+
+<div class="card-body">
+
+<h3>💧 Irrigation System</h3>
+
+<p>Advanced drip irrigation systems for efficient water management.</p>
+
+<div class="price">₹2,999</div>
+
+<a href="/contact" class="btn">Buy Now</a>
+
+</div>
+
+</div>
+
+<div class="card product-card">
+<img src="/image/Agriculture-Machine.jpg" alt="Tractor">
+
+<div class="card-body">
+
+<h3>🚛 Agricultural Machinery</h3>
+
+<p>Latest tractors and farming machines to increase field productivity.</p>
+
+<div class="price">Starting ₹4,50,000</div>
+
+<a href="/contact" class="btn">View Details</a>
+
+</div>
+
+</div>
+<div class="card product-card">
+
+<img src="/image/OIP.jpeg" alt="Pesticide">
+
+<div class="card-body">
+
+<h3>🛡️ Electric Farm Equipment</h3>
+
+<p>Protect your crops against insects, diseases, and weeds effectively.</p>
+
+<div class="price">₹65,0000</div>
+
+<a href="/contact" class="btn">Buy Now</a>
+
+</div>
+</div>
+<div class="card product-card">
+
+<img src="/image/OIP (7).webp" alt="Pesticide">
+
+<div class="card-body">
+
+<h3>🛡️ Small Vegetable Farm Equipment</h3>
+
+<p>Protect your crops against insects, diseases, and weeds effectively.</p>
+
+<div class="price">₹105,0000</div>
+
+<a href="/contact" class="btn">Buy Now</a>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+<footer>
+
+<%- include("footer") %>
+
+</footer>
+<script>
+
+function searchProduct(){
+
+    let input = document.getElementById("searchProduct").value.toLowerCase();
+
+    let cards = document.getElementsByClassName("product-card");
+
+    for(let i=0;i<cards.length;i++){
+
+        let title = cards[i].getElementsByTagName("h3")[0];
+
+        if(title.innerHTML.toLowerCase().indexOf(input) > -1){
+
+            cards[i].style.display = "block";
+
+        }
+        else{
+
+            cards[i].style.display = "none";
+
+        }
+
+    }
+
+}
+
+</script>
+</body>
+</html>

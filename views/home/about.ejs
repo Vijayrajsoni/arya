@@ -1,0 +1,344 @@
+<%- include("header") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Arya Agricultural</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f9f3;
+}
+
+
+.hero{
+    height:300px;
+    background:linear-gradient(rgba(0,80,0,.65),rgba(0,80,0,.65)),
+    url("/image/OIP\ \(1\).jpeg") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+}
+
+/* About */
+
+.about{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.content h2{
+    color:#2e7d32;
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.content p{
+    color:#555;
+    line-height:1.8;
+    font-size:17px;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1b5e20;
+}
+
+/* Mission */
+
+.mission{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#2e7d32;
+    margin:15px 0;
+}
+
+.card p{
+    color:#666;
+    line-height:1.7;
+}
+
+.icon{
+    font-size:50px;
+}
+
+/* Why Choose Us */
+
+.choose{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+    text-align:center;
+}
+
+.choose h2{
+    color:#2e7d32;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.feature{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.feature h3{
+    margin:15px 0;
+    color:#2e7d32;
+}
+
+.feature p{
+    color:#666;
+}
+
+
+/* Footer */
+
+.video-box{
+    width:100%;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.video-box iframe{
+    width:100%;
+    height:420px;
+    border:none;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.video-box iframe:hover{
+    transform:scale(1.02);
+}
+
+@media(max-width:768px){
+
+.about{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:36px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>About Arya Agricultural</h1>
+
+<p>Growing Agriculture with Innovation & Technology 🌱</p>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<div class="video-box">
+
+<iframe
+src="https://www.youtube.com/embed/mZXetb1TPEg"
+title="Modern Agriculture"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="content">
+
+<h2>Who We Are</h2>
+
+<p>
+Arya Agricultural is dedicated to empowering farmers with modern farming
+solutions, premium-quality seeds, fertilizers, and advanced agricultural
+technology. Our goal is to improve productivity while promoting sustainable
+and environmentally friendly farming practices.
+</p>
+
+<p>
+We believe that agriculture is the foundation of a prosperous nation.
+Through innovation and expert guidance, we help farmers achieve better
+harvests and higher profits.
+</p>
+
+<a href="/contact" class="btn">Contact Us</a>
+
+</div>
+
+</section>
+
+<section class="mission">
+
+<div class="card">
+
+<div class="icon">🎯</div>
+
+<h3>Our Mission</h3>
+
+<p>
+To provide innovative agricultural solutions that improve crop quality,
+increase productivity, and support sustainable farming.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">👁️</div>
+
+<h3>Our Vision</h3>
+
+<p>
+To become a trusted agricultural partner by delivering reliable products,
+modern technology, and expert farming guidance.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">🌿</div>
+
+<h3>Our Values</h3>
+
+<p>
+Quality, integrity, innovation, and customer satisfaction are the core
+values that guide everything we do.
+</p>
+
+</div>
+
+</section>
+
+<section class="choose">
+
+<h2>Why Choose Arya Agricultural?</h2>
+
+<div class="features">
+
+<div class="feature">
+
+<h3>🌱 Quality Products</h3>
+
+<p>Certified seeds, fertilizers, and agricultural equipment.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🚜 Modern Technology</h3>
+
+<p>Smart farming solutions for better productivity.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>👨‍🌾 Expert Guidance</h3>
+
+<p>Professional support and advice for farmers.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🌍 Sustainable Farming</h3>
+
+<p>Eco-friendly agricultural practices for future generations.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<%- include("footer") %>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arya Agricultural</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f8f1;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    background:linear-gradient(90deg,#1b5e20,#2e7d32,#43a047);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 12px rgba(0,0,0,.2);
+}
+
+.navbar{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #fff;
+    background:#fff;
+}
+
+.logo h2{
+    font-size:28px;
+    color:#fff;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ffd54f;
+}
+
+/* ================= MENU ================= */
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li{
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+    padding:8px 12px;
+    border-radius:8px;
+}
+
+nav ul li a:hover{
+    background:rgba(255,255,255,.15);
+    color:#ffeb3b;
+}
+
+/* ================= USER BUTTON ================= */
+
+.login-btn{
+    display:flex;
+    align-items:center;
+}
+
+.login-btn a{
+    text-decoration:none;
+    background:#ffeb3b;
+    color:#1b5e20;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.3s;
+    white-space:nowrap;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.login-btn a:hover{
+    background:#fff;
+    transform:translateY(-2px);
+}
+
+/* Welcome User */
+
+.login-btn span{
+    color:#1b5e20;
+    font-size:15px;
+    font-weight:700;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+    .navbar{
+        flex-direction:column;
+        height:auto;
+        padding:20px 0;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+        margin:20px 0;
+    }
+
+    .login-btn{
+        margin-top:10px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .logo{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo h2{
+        font-size:22px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        width:100%;
+    }
+
+    nav ul li{
+        width:100%;
+        text-align:center;
+    }
+
+    nav ul li a{
+        display:block;
+        width:100%;
+        padding:12px;
+    }
+
+    .login-btn a{
+        padding:10px 18px;
+        font-size:14px;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+<img src="/image/Untitled - June 30, 2026 at 23.01.56 (1).png" alt="Logo">
+
+<h2>Arya <span>Agricultural</span></h2>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="/home">🏠 Home</a></li>
+
+<li><a href="/about">ℹ️ About</a></li>
+
+<li><a href="/product">🌾 Products</a></li>
+
+<li><a href="/services">🚜 Services</a></li>
+<li><a href="/news">📰 News</a></li>
+<li><a href="/cart">🛒 Cart</a></li>
+<li><a href="/contact">📞 Contact</a></li>
+<li><a href="/login">🔓 Logout</a></li>
+<li><a href="/login">👤 <%= ("login") %></a></li>
+</ul>
+
+</nav>
+
+<div class="login-btn">
+
+<a href="#"><% if(user){ %>
+
+    <span>👤Welcome, <%= user.name %></span>
+
+
+<% } %></a>
+
+</div>
+
+</div>
+
+</header>

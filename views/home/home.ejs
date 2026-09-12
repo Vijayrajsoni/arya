@@ -1,0 +1,508 @@
+<%- include("header") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arya Agricultural</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f5f9f3;
+}
+
+/* Hero */
+
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("/image/1eb40e8f6c568d75f45bcb41ad97bdf9.gif") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#ffd54f;
+}
+
+.hero p{
+font-size:22px;
+width:70%;
+margin:auto;
+line-height:1.8;
+}
+
+.btns{
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+margin:10px;
+border-radius:35px;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+transition:.4s;
+}
+
+.btn1{
+background:#2e7d32;
+color:white;
+}
+
+.btn1:hover{
+background:#1b5e20;
+}
+
+.btn2{
+background:#ffd54f;
+color:#1b5e20;
+}
+
+.btn2:hover{
+background:white;
+}
+
+/* About */
+
+.about{
+width:90%;
+max-width:1200px;
+margin:80px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about h2{
+font-size:40px;
+color:#2e7d32;
+margin-bottom:20px;
+}
+
+.about p{
+line-height:1.9;
+color:#555;
+font-size:18px;
+}
+
+/* Services */
+
+.services{
+padding:80px 8%;
+background:white;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+color:#2e7d32;
+margin-bottom:50px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#f7fff7;
+padding:35px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin:20px 0;
+color:#2e7d32;
+}
+
+.icon{
+font-size:55px;
+}
+
+/* Products */
+
+.products{
+padding:80px 8%;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+gap:30px;
+}
+
+.product{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.product img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.product h3{
+padding:15px;
+color:#2e7d32;
+}
+
+.product p{
+padding:0 15px 20px;
+color:#666;
+}
+
+/* Counter */
+
+.counter{
+background:#2e7d32;
+padding:70px;
+color:white;
+}
+
+.counter-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+text-align:center;
+gap:30px;
+}
+
+.counter h2{
+font-size:50px;
+}
+
+.counter p{
+font-size:20px;
+}
+
+/* Video */
+
+.video{
+padding:80px;
+text-align:center;
+}
+
+.video h2{
+font-size:42px;
+color:#2e7d32;
+margin-bottom:30px;
+}
+
+.video iframe{
+width:90%;
+max-width:900px;
+height:500px;
+border:none;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+/* Testimonials */
+
+.testimonial{
+background:white;
+padding:80px;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.review{
+padding:30px;
+background:#f5f9f3;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.review h4{
+margin-top:20px;
+color:#2e7d32;
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#2e7d32,#1b5e20);
+padding:70px;
+text-align:center;
+color:white;
+}
+
+.cta h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.cta a{
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+background:white;
+color:#2e7d32;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+/* Footer */
+
+footer{
+background:#1b5e20;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+width:95%;
+font-size:17px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.video iframe{
+height:250px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Welcome to <span>Arya Agricultural</span></h1>
+
+<p>
+Empowering Farmers with Modern Technology, Quality Products,
+and Sustainable Farming Solutions.
+
+</p>
+
+<div class="btns">
+
+<a href="/product" class="btn btn1">Explore Products</a>
+
+<a href="/contact" class="btn btn2">Contact Us</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<img src="/image/030302_bmp_agric_ani.gif">
+
+<div>
+
+<h2>Who We Are</h2>
+
+<p>
+Arya Agricultural provides premium seeds, fertilizers, pesticides,
+farm equipment, and smart farming solutions to help farmers increase
+their productivity and income.
+</p>
+
+<a href="/about" class="btn btn1">Read More</a>
+
+</div>
+
+</section>
+
+<section class="services">
+
+<h2 class="title">Our Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🌱</div>
+<h3>Quality Seeds</h3>
+<p>Certified seeds for better crop yield.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚜</div>
+<h3>Modern Equipment</h3>
+<p>Advanced agricultural machinery.</p>
+</div>
+
+<div class="card">
+<div class="icon">💧</div>
+<h3>Smart Irrigation</h3>
+<p>Water-saving irrigation systems.</p>
+</div>
+
+<div class="card">
+<div class="icon">👨‍🌾</div>
+<h3>Expert Advice</h3>
+<p>Professional farming consultation.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="products">
+
+<h2 class="title">Featured Products</h2>
+
+<div class="product-grid">
+
+<div class="product">
+<img src="/image/giphy.gif">
+<h3>Premium Seeds</h3>
+<p>High-quality certified seeds.</p>
+</div>
+
+<div class="product">
+<img src="/image/14178062.gif">
+<h3>Organic Fertilizer</h3>
+<p>Improve soil fertility naturally.</p>
+</div>
+
+<div class="product">
+<img src="/image/farming.gif">
+<h3>Farm Equipment</h3>
+<p>Modern tools for smart farming.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="counter">
+
+<div class="counter-grid">
+
+<div>
+<h2>5000+</h2>
+<p>Happy Farmers</p>
+</div>
+
+<div>
+<h2>150+</h2>
+<p>Products</p>
+</div>
+
+<div>
+<h2>20+</h2>
+<p>Years Experience</p>
+</div>
+
+<div>
+<h2>98%</h2>
+<p>Customer Satisfaction</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="video">
+
+<h2>Watch Modern Farming</h2>
+
+<iframe width="997" height="561" src="https://www.youtube.com/embed/-eBrAm64fpg" title="Rice Farming / Paddy Cultivation | Complete Growing Guide from Seeding to Harvest" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</section>
+
+<section class="testimonial">
+
+<h2 class="title">What Farmers Say</h2>
+
+<div class="review-grid">
+
+<div class="review">
+<p>"Excellent products and amazing customer support. My crop production increased significantly."</p>
+<h4>- Ramesh Kumar</h4>
+</div>
+
+<div class="review">
+<p>"The quality of seeds and fertilizers is outstanding. Highly recommended."</p>
+<h4>- Suresh Patel</h4>
+</div>
+
+<div class="review">
+<p>"Arya Agricultural helped me adopt modern farming techniques successfully."</p>
+<h4>- Amit Singh</h4>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Ready to Grow Better Crops?</h2>
+
+<p>Join thousands of happy farmers across India.</p>
+
+<a href="/contact">Get Started</a>
+
+</section>
+
+<footer>
+
+<%- include("footer") %>
+
+</footer>
+
+</body>
+</html>

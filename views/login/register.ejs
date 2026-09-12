@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Register Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    linear-gradient(rgba(34,139,34,.55),rgba(0,100,0,.55)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    padding:30px;
+}
+
+.register-box{
+    width:450px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    animation:fadeIn .8s ease;
+}
+
+.register-box h2{
+    text-align:center;
+    color:#fff;
+    margin-bottom:25px;
+    font-size:32px;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    color:#fff;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+.input-box input,
+.input-box select{
+    width:100%;
+    padding:13px 15px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    background:rgba(255,255,255,.92);
+    transition:.3s;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+    background:#fff;
+    box-shadow:0 0 10px rgba(76,175,80,.8);
+}
+
+.row{
+    display:flex;
+    gap:15px;
+}
+
+.row .input-box{
+    flex:1;
+}
+
+.register-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
+}
+
+.register-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.bottom-text{
+    text-align:center;
+    color:#fff;
+    margin-top:20px;
+    font-size:15px;
+}
+
+.bottom-text a{
+    color:#fff;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.bottom-text a:hover{
+    text-decoration:underline;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:550px){
+
+.register-box{
+    width:100%;
+    padding:25px;
+}
+
+.row{
+    flex-direction:column;
+    gap:0;
+}
+
+.register-box h2{
+    font-size:28px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-box">
+
+<h2>Create Account</h2>
+
+<form action="/registers" method="post">
+
+<div class="row">
+
+<div class="input-box">
+<label>First Name</label>
+<input type="text" name="firstname" placeholder="First Name" required>
+</div>
+
+<div class="input-box">
+<label>Last Name</label>
+<input type="text" name="lastname" placeholder="Last Name" required>
+</div>
+
+</div>
+
+<div class="input-box">
+<label>Email Address</label>
+<input type="email" name="email" placeholder="Enter Email" required>
+</div>
+
+<div class="input-box">
+<label>Mobile Number</label>
+<input type="tel" name="mobile" placeholder="Enter Mobile Number" required>
+</div>
+
+<div class="input-box">
+<label>User Name</label>
+<input type="text" name="username" placeholder="Choose Username" required>
+</div>
+
+<div class="input-box">
+<label>Password</label>
+<input type="password" name="password" placeholder="Create Password" required>
+</div>
+
+<div class="input-box">
+<label>Confirm Password</label>
+<input type="password" name="confirmpassword" placeholder="Confirm Password" required>
+</div>
+
+<div class="input-box">
+<label>Role</label>
+<select name="role" required>
+<option value="">Select Role</option>
+<option>Student</option>
+<option>Faculty</option>
+<option>Admin</option>
+</select>
+</div>
+
+<input type="submit" value="Create Account" class="register-btn">
+
+<div class="bottom-text">
+Already have an account?
+<a href="/login">Login</a>
+<br>
+<% if (typeof msg !== "undefined") { %>
+    <p style="color:rgb(157, 255, 0)" class="msg1"><%= msg %></p>
+<% } %>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

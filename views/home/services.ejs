@@ -1,0 +1,329 @@
+<%- include("header") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services | Arya Agricultural</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f9f3;
+}
+
+/* Hero */
+
+.hero{
+    height:320px;
+    background:linear-gradient(rgba(0,80,0,.7),rgba(0,80,0,.7)),
+    url("/image/OIP\ \(2\).webp") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:20px;
+}
+
+/* Section */
+
+.services{
+    width:90%;
+    max-width:1300px;
+    margin:70px auto;
+}
+
+.services h2{
+    text-align:center;
+    color:#2e7d32;
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.services p.title{
+    text-align:center;
+    color:#666;
+    margin-bottom:50px;
+}
+
+/* Cards */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.icon{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    color:#2e7d32;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#555;
+    line-height:1.8;
+}
+
+/* Process */
+
+.process{
+    width:90%;
+    max-width:1200px;
+    margin:80px auto;
+}
+
+.process h2{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:40px;
+    font-size:38px;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.number{
+    width:60px;
+    height:60px;
+    margin:auto;
+    background:#2e7d32;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.step h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+.step p{
+    color:#666;
+}
+
+/* CTA */
+
+.cta{
+    width:90%;
+    max-width:1200px;
+    margin:80px auto;
+    background:linear-gradient(135deg,#2e7d32,#1b5e20);
+    color:white;
+    text-align:center;
+    padding:60px 30px;
+    border-radius:20px;
+}
+
+.cta h2{
+    font-size:40px;
+}
+
+.cta p{
+    margin:20px 0 30px;
+    font-size:18px;
+}
+
+.cta a{
+    text-decoration:none;
+    background:#fff;
+    color:#2e7d32;
+    padding:15px 35px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.cta a:hover{
+    background:#ffd54f;
+}
+
+/* Footer */
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:60px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Our Agricultural Services</h1>
+
+<p>Helping Farmers Grow with Modern Technology & Expert Support 🌱</p>
+
+</div>
+
+</section>
+
+<section class="services">
+
+<h2>What We Offer</h2>
+
+<p class="title">Professional agricultural services designed to improve farming productivity.</p>
+
+<div class="service-grid">
+
+<div class="card">
+<div class="icon">🌱</div>
+<h3>Premium Seeds</h3>
+<p>High-quality certified seeds with better germination and higher crop yield.</p>
+</div>
+
+<div class="card">
+<div class="icon">🌿</div>
+<h3>Organic Fertilizers</h3>
+<p>Eco-friendly fertilizers that improve soil fertility and crop quality.</p>
+</div>
+
+<div class="card">
+<div class="icon">🚜</div>
+<h3>Farm Equipment</h3>
+<p>Modern agricultural machinery and tools for efficient farming operations.</p>
+</div>
+
+<div class="card">
+<div class="icon">💧</div>
+<h3>Smart Irrigation</h3>
+<p>Drip irrigation and sprinkler systems for efficient water management.</p>
+</div>
+
+<div class="card">
+<div class="icon">🧑‍🌾</div>
+<h3>Expert Consultation</h3>
+<p>Professional guidance for crop selection, disease management, and farming techniques.</p>
+</div>
+
+<div class="card">
+<div class="icon">📦</div>
+<h3>Fast Delivery</h3>
+<p>Timely delivery of agricultural products directly to farmers across the region.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="process">
+
+<h2>How We Work</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="number">1</div>
+<h3>Consultation</h3>
+<p>Understand farmers' requirements and challenges.</p>
+</div>
+
+<div class="step">
+<div class="number">2</div>
+<h3>Recommendation</h3>
+<p>Suggest the best products and farming solutions.</p>
+</div>
+
+<div class="step">
+<div class="number">3</div>
+<h3>Supply</h3>
+<p>Provide quality agricultural products and equipment.</p>
+</div>
+
+<div class="step">
+<div class="number">4</div>
+<h3>Support</h3>
+<p>Continuous guidance for better crop production and success.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Ready to Improve Your Farming?</h2>
+
+<p>Contact Arya Agricultural today for quality products and expert farming solutions.</p>
+
+<a href="/contact">Contact Us</a>
+
+</section>
+
+<footer>
+
+<%- include("footer") %>
+</footer>
+
+</body>
+</html>

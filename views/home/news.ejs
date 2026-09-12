@@ -1,0 +1,1220 @@
+<%- include("header") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agriculture News | Arya Agricultural</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#f4f8f3;
+}
+
+/* Hero */
+
+.hero{
+
+height:320px;
+
+background:
+linear-gradient(rgba(0,80,0,.65),rgba(0,80,0,.65)),
+url("/image/OIP\ \(1\).webp") center/cover;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+}
+
+.hero h1{
+
+font-size:55px;
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+/* Breaking News */
+
+.breaking{
+
+background:#d32f2f;
+
+color:white;
+
+padding:15px;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.breaking h3{
+
+margin-right:20px;
+
+background:white;
+
+color:red;
+
+padding:8px 15px;
+
+border-radius:5px;
+
+}
+
+.breaking marquee{
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+/* Search */
+
+.search{
+
+width:90%;
+
+max-width:1200px;
+
+margin:40px auto;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.search input{
+
+width:500px;
+
+padding:15px;
+
+font-size:18px;
+
+border:2px solid green;
+
+border-radius:40px;
+
+outline:none;
+
+}
+
+/* Categories */
+
+.categories{
+
+width:90%;
+
+margin:auto;
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin-bottom:40px;
+
+}
+
+.categories button{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+background:#2e7d32;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.categories button:hover{
+
+background:#1b5e20;
+
+}
+
+/* News */
+
+.news{
+
+width:90%;
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+.heading{
+
+text-align:center;
+
+font-size:40px;
+
+color:#2e7d32;
+
+margin-bottom:40px;
+
+}
+
+.news-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+/*================ WEATHER =================*/
+
+.weather-section{
+
+width:90%;
+
+max-width:1200px;
+
+margin:80px auto;
+
+}
+
+.weather-container{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+gap:40px;
+
+align-items:center;
+
+}
+
+.weather-card{
+
+background:white;
+
+padding:40px;
+
+text-align:center;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.weather-card h1{
+
+font-size:55px;
+
+color:#2e7d32;
+
+margin:15px 0;
+
+}
+
+.weather-card p{
+
+margin:12px 0;
+
+font-size:18px;
+
+}
+
+.weather-icon{
+
+font-size:70px;
+
+color:orange;
+
+}
+
+.weather-image img{
+
+width:100%;
+
+border-radius:20px;
+
+}
+
+/*================ VIDEO =================*/
+
+.video-section{
+
+width:90%;
+
+max-width:1300px;
+
+margin:90px auto;
+
+}
+
+.video-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+gap:30px;
+
+}
+
+.video-card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.video-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.video-card iframe{
+
+width:100%;
+
+height:220px;
+
+border:none;
+
+}
+
+.video-card h3{
+
+padding:20px;
+
+color:#2e7d32;
+
+text-align:center;
+
+}
+
+/*================ MARKET =================*/
+
+.market-section{
+
+width:90%;
+
+max-width:1200px;
+
+margin:80px auto;
+
+}
+
+.market-section table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:white;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.market-section th{
+
+background:#2e7d32;
+
+color:white;
+
+padding:18px;
+
+}
+
+.market-section td{
+
+padding:18px;
+
+text-align:center;
+
+border-bottom:1px solid #ddd;
+
+}
+
+/*================ STATS =================*/
+
+.stats{
+
+background:#2e7d32;
+
+padding:70px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+margin-top:80px;
+
+}
+
+.stat-box{
+
+text-align:center;
+
+color:white;
+
+}
+
+.stat-box h1{
+
+font-size:50px;
+
+margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+font-size:20px;
+
+}
+
+@media(max-width:768px){
+
+.weather-container{
+
+grid-template-columns:1fr;
+
+}
+
+.video-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.market-section{
+
+overflow-x:auto;
+
+}
+
+.stats{
+
+padding:40px 20px;
+
+}
+
+}
+
+.card img{
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+}
+
+.content{
+
+padding:20px;
+
+}
+/*================ Government Schemes ================*/
+
+.scheme-section{
+
+width:90%;
+max-width:1300px;
+margin:80px auto;
+
+}
+
+.scheme-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+
+}
+
+.scheme-card{
+
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+transition:.4s;
+
+}
+
+.scheme-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.scheme-card h3{
+
+color:#2e7d32;
+margin-bottom:15px;
+
+}
+
+.scheme-card p{
+
+line-height:1.8;
+margin-bottom:20px;
+
+}
+
+.scheme-card a{
+
+display:inline-block;
+padding:10px 20px;
+background:#2e7d32;
+color:white;
+text-decoration:none;
+border-radius:30px;
+
+}
+
+/* Newsletter */
+
+.newsletter{
+
+background:#2e7d32;
+padding:60px;
+text-align:center;
+color:white;
+
+}
+
+.newsletter input{
+
+width:400px;
+max-width:90%;
+padding:15px;
+border:none;
+border-radius:30px;
+margin-top:20px;
+
+}
+
+.newsletter button{
+
+padding:15px 30px;
+border:none;
+background:#ffd54f;
+border-radius:30px;
+margin-left:10px;
+cursor:pointer;
+
+}
+
+/* Social */
+
+.social-section{
+
+padding:60px;
+text-align:center;
+
+}
+
+.social-icons a{
+
+display:inline-flex;
+justify-content:center;
+align-items:center;
+
+width:60px;
+height:60px;
+
+margin:10px;
+
+background:#2e7d32;
+color:white;
+
+font-size:24px;
+
+border-radius:50%;
+
+text-decoration:none;
+
+transition:.4s;
+
+}
+
+.social-icons a:hover{
+
+background:#ffd54f;
+color:#2e7d32;
+
+}
+
+/* WhatsApp */
+
+.whatsapp{
+
+position:fixed;
+bottom:30px;
+right:25px;
+
+width:65px;
+height:65px;
+
+background:#25D366;
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:35px;
+
+text-decoration:none;
+
+z-index:1000;
+
+}
+
+/* Scroll Button */
+
+#topBtn{
+
+display:none;
+
+position:fixed;
+
+bottom:110px;
+right:30px;
+
+padding:15px 18px;
+
+border:none;
+
+background:#2e7d32;
+
+color:white;
+
+border-radius:50%;
+
+cursor:pointer;
+
+font-size:20px;
+
+}
+
+/* Footer */
+
+
+
+
+
+
+
+
+.copyright{
+
+text-align:center;
+
+}
+
+.date{
+
+color:#888;
+
+font-size:14px;
+
+}
+
+.content h3{
+
+margin:15px 0;
+
+color:#2e7d32;
+
+}
+
+.content p{
+
+color:#555;
+
+line-height:1.8;
+
+}
+
+.read{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:10px 25px;
+
+background:#2e7d32;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+}
+
+.read:hover{
+
+background:#1b5e20;
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.search input{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Latest Agriculture News</h1>
+
+<p>
+
+Stay updated with agriculture news, weather reports,
+government schemes and modern farming technology.
+
+</p>
+
+</div>
+
+</section>
+
+<div class="breaking">
+
+<h3>Breaking</h3>
+
+<marquee>
+
+🌾 Government announces new subsidy for farmers |
+🌦 Monsoon likely to improve Kharif crop production |
+🚜 Smart irrigation technology launched |
+🌱 Organic farming awareness campaign started
+
+</marquee>
+
+</div>
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="🔍 Search Agriculture News...">
+
+</div>
+
+<div class="categories">
+
+<button>All</button>
+
+<button>Crop</button>
+
+<button>Weather</button>
+
+<button>Technology</button>
+
+<button>Government</button>
+
+<button>Organic</button>
+
+<button>Market</button>
+
+</div>
+
+<section class="news">
+
+<h2 class="heading">
+
+Latest Agriculture News
+
+</h2>
+
+<div class="news-grid">
+
+<div class="card">
+
+<img src="/image/news1.jpg">
+
+<div class="content">
+
+<span class="date">
+
+📅 30 June 2026
+
+</span>
+
+<h3>
+
+Modern Farming Techniques
+
+</h3>
+
+<p>
+
+AI and smart farming technologies are helping Indian
+farmers increase productivity while reducing costs.
+
+</p>
+
+<a href="https://farmonaut.com/precision-farming/10-methods-of-farming-in-agriculture-for-2025" class="read">
+
+Read More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="/image/news2.png">
+
+<div class="content">
+
+<span class="date">
+
+📅 30 June 2026
+
+</span>
+
+<h3>
+
+Organic Farming Growing Rapidly
+
+</h3>
+
+<p>
+
+Organic farming continues to gain popularity due to
+healthy food demand and government support.
+
+</p>
+
+<a href="https://www.ibef.org/blogs/indian-agriculture-and-the-rise-of-organic-farming" class="read">
+
+Read More
+
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="/image/OIP.webp">
+
+<div class="content">
+
+<span class="date">
+
+📅 30 June 2026
+
+</span>
+
+<h3>
+
+Drone Technology in Agriculture
+
+</h3>
+
+<p>
+
+Drones are now being used for spraying pesticides,
+crop monitoring and soil analysis.
+
+</p>
+
+<a href="https://reviews.oneclearwinner.com/product/drone-agriculture/?msclkid=9f51cb4aba3217673956a1094a75f686&utm_source=bing&utm_medium=cpc&utm_campaign=geo%3AWW%20%7C%20site%3AOCW_ssr_t3%20%7C%20type%3AKWs%20%7C%20category%3AAll&utm_term=drone%20agriculture&utm_content=ad%20group17" class="read">
+
+Read More
+
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= WEATHER SECTION ================= -->
+
+<section class="weather-section">
+
+<h2 class="heading">
+
+🌦 Weather Report
+
+</h2>
+
+<div class="weather-container">
+
+<div class="weather-card">
+
+<div class="weather-icon">
+
+<i class="fas fa-cloud-sun"></i>
+
+</div>
+
+<h2 id="city">Prayagraj</h2>
+
+<h1 id="temp">30°C</h1>
+
+<h3 id="condition">Sunny</h3>
+
+<p>Humidity : <span id="humidity">65%</span></p>
+
+<p>Wind Speed : <span id="wind">12 km/h</span></p>
+
+<p>Pressure : <span id="pressure">1008 hPa</span></p>
+
+<a href="https://www.accuweather.com/en/in/jhusi/892165/weather-forecast/892165"><input type="button" value="current " style="height: 40px; width:120px ; border-radius:5px; color:white; background-color:#25D366; font-weight:800; font-size:20px;cursor:pointer"></a>
+
+</div>
+
+<div class="weather-image">
+
+<img src="/image/wheter.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= AGRICULTURE VIDEOS ================= -->
+
+<section class="video-section">
+
+<h2 class="heading">
+
+🎥 Latest Agriculture Videos
+
+</h2>
+
+<div class="video-grid">
+
+<div class="video-card">
+
+<iframe width="997" height="561" src="https://www.youtube.com/embed/YXSjkZu-1Gg" title="8.9 Billion Pounds Of Onions Harvest by American Farmers This Way | Agriculture Technology" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h3>Modern Farming Techniques</h3>
+
+</div>
+
+<div class="video-card">
+
+<iframe width="997" height="561" src="https://www.youtube.com/embed/SOcxRMOjXWY" title="A beginner’s guide to growing organic food" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h3>Organic Farming Guide</h3>
+
+</div>
+
+<div class="video-card">
+
+<iframe width="997" height="561" src="https://www.youtube.com/embed/zIesCWeTptc" title="3 - Smart Irrigation System Explained: Soil Moisture Sensors &amp; Real Efficiency" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h3>Smart Irrigation Technology</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MARKET PRICE ================= -->
+
+<section class="market-section">
+
+<h2 class="heading">
+
+🌾 Today's Market Prices
+
+</h2>
+
+<table>
+
+<tr>
+
+<th>Crop</th>
+
+<th>Price (₹/Quintal)</th>
+
+<th>Status</th>
+
+</tr>
+
+<tr>
+
+<td>🌾 Wheat</td>
+
+<td>2450</td>
+
+<td style="color:green;">▲ Up</td>
+
+</tr>
+
+<tr>
+
+<td>🌽 Maize</td>
+
+<td>2250</td>
+
+<td style="color:red;">▼ Down</td>
+
+</tr>
+
+<tr>
+
+<td>🌱 Mustard</td>
+
+<td>6350</td>
+
+<td style="color:green;">▲ Up</td>
+
+</tr>
+
+<tr>
+
+<td>🥔 Potato</td>
+
+<td>1800</td>
+
+<td style="color:green;">▲ Up</td>
+
+</tr>
+
+<tr>
+
+<td>🧅 Onion</td>
+
+<td>2200</td>
+
+<td style="color:red;">▼ Down</td>
+
+</tr>
+
+<tr>
+
+<td>🍅 Tomato</td>
+
+<td>2400</td>
+
+<td style="color:green;">▲ Up</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="stats">
+
+<div class="stat-box">
+
+<h1>5000+</h1>
+
+<p>Happy Farmers</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1>250+</h1>
+
+<p>Daily News</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1>100+</h1>
+
+<p>Government Schemes</p>
+
+</div>
+
+<div class="stat-box">
+
+<h1>50+</h1>
+
+<p>Agriculture Experts</p>
+
+</div>
+
+</section>
+<!-- ================= GOVERNMENT SCHEMES ================= -->
+
+<section class="scheme-section">
+
+<h2 class="heading">
+🚜 Government Schemes for Farmers
+</h2>
+
+<div class="scheme-grid">
+
+<div class="scheme-card">
+<h3>🌾 PM-KISAN</h3>
+<p>Financial assistance of ₹6,000 annually to eligible farmers.</p>
+<a href="https://pmkisan.gov.in" target="_blank">
+Visit Official Website
+</a>
+</div>
+
+<div class="scheme-card">
+<h3>🌱 PM Fasal Bima Yojana</h3>
+<p>Crop insurance scheme protecting farmers against crop loss.</p>
+<a href="https://pmfby.gov.in" target="_blank">
+Visit Official Website
+</a>
+</div>
+
+<div class="scheme-card">
+<h3>🌍 e-NAM</h3>
+<p>National Agriculture Market for better crop selling.</p>
+<a href="https://www.enam.gov.in" target="_blank">
+Visit Official Website
+</a>
+</div>
+
+<div class="scheme-card">
+<h3>🧪 Soil Health Card</h3>
+<p>Know your soil quality and improve crop productivity.</p>
+<a href="https://soilhealth.dac.gov.in" target="_blank">
+Visit Official Website
+</a>
+</div>
+
+<div class="scheme-card">
+<h3>💳 Kisan Credit Card</h3>
+<p>Easy agricultural loans with low interest rates.</p>
+<a href="https://www.myscheme.gov.in" target="_blank">
+Visit Official Website
+</a>
+</div>
+
+<div class="scheme-card">
+<h3>☀ PM Kusum Yojana</h3>
+<p>Solar pump subsidy for farmers.</p>
+<a href="https://mnre.gov.in" target="_blank">
+Visit Official Website
+</a>
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+    <%-include("footer")%>
+</footer>
+</body>
+</html>

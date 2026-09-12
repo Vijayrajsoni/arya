@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin portal</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(15,60,15,.75),rgba(15,60,15,.75)),
+    url("/images/farm-bg.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* Dashboard Heading */
+
+.adim h1{
+
+    text-align:center;
+    padding:25px;
+    color:#fff;
+    font-size:42px;
+    font-weight:700;
+    text-shadow:3px 3px 10px rgba(0,0,0,.5);
+
+}
+
+/* Table */
+
+table{
+
+    width:95%;
+    max-width:1300px;
+
+    margin:30px auto;
+
+    border-collapse:collapse;
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    backdrop-filter:blur(5px);
+
+}
+
+/* Main Heading */
+
+table tr:first-child th{
+
+    background:linear-gradient(135deg,#1b5e20,#4caf50,#81c784);
+
+    color:#fff;
+
+    font-size:30px;
+
+    padding:22px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/* Column Heading */
+
+table tr:nth-child(2){
+
+    background:#2e7d32;
+
+}
+
+table tr:nth-child(2) th{
+
+    color:#fff;
+
+    font-size:17px;
+
+    padding:16px;
+
+    text-transform:uppercase;
+
+}
+
+/* Cells */
+
+table td{
+
+    padding:16px;
+
+    text-align:center;
+
+    color:#444;
+
+    font-size:15px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+/* Alternate Rows */
+
+table tr:nth-child(even):not(:first-child):not(:nth-child(2)){
+
+    background:#f4fff4;
+
+}
+
+table tr:nth-child(odd):not(:first-child):not(:nth-child(2)){
+
+    background:#ffffff;
+
+}
+
+/* Hover Effect */
+
+table tr:hover{
+
+    background:#dcedc8;
+
+    transform:scale(1.01);
+
+    transition:.3s;
+
+}
+
+/* Border */
+
+table th,
+table td{
+
+    border:1px solid #c8e6c9;
+
+}
+
+/* Scroll */
+
+center{
+
+    overflow-x:auto;
+
+}
+
+/* Fade */
+
+table{
+
+    animation:tableLoad .8s ease;
+
+}
+
+@keyframes tableLoad{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* Beautiful Badge Effect */
+
+table td:first-child{
+
+    color:#2e7d32;
+
+    font-weight:bold;
+
+}
+
+/* Email */
+
+table td:nth-child(2){
+
+    color:#1565c0;
+
+}
+
+/* Subject */
+
+table td:nth-child(3){
+
+    color:#ef6c00;
+
+    font-weight:600;
+
+}
+
+/* Message */
+
+table td:nth-child(4){
+
+    max-width:350px;
+
+    word-wrap:break-word;
+
+    line-height:1.6;
+
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+table{
+
+width:100%;
+
+}
+
+.adim h1{
+
+font-size:32px;
+
+}
+
+table th,
+table td{
+
+padding:12px;
+font-size:14px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+body{
+
+padding:10px;
+
+}
+
+.adim h1{
+
+font-size:25px;
+
+}
+
+table tr:first-child th{
+
+font-size:22px;
+
+}
+
+table th,
+table td{
+
+font-size:13px;
+padding:10px;
+
+}
+
+}
+    </style>
+</head>
+<body>
+    <div class="adim">
+        <h1>Wecome to admin Dashboard</h1>
+    </div>
+
+    <center><table width="900px"  border="1" style="margin-top: 20px;">
+            <tr>
+                <th colspan="7" style="background-color: black;color: white;">farmers Record</th>
+            </tr>
+            <tr style="background-color: maroon; color: yellow;">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+            </tr>
+            
+        <%for(let row of records){%>
+            <tr>
+            <td><%=row.name%></td>
+            <td><%=row.email%></td>
+            <td><%=row.subject%></td>
+            <td><%=row.message%></td>
+            </tr>
+        <%
+        }
+        
+        %>
+        </table> 
+    </center>
+</body>
+</html>

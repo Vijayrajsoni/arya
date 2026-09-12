@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f8f1;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.title{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+.cart-box{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2e7d32;
+    color:#fff;
+    padding:18px;
+    font-size:18px;
+}
+
+td{
+    padding:18px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.qty{
+    width:70px;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    text-align:center;
+}
+
+.remove-btn{
+    background:#e53935;
+    color:#fff;
+    padding:10px 18px;
+    text-decoration:none;
+    border-radius:5px;
+    transition:.3s;
+}
+
+.remove-btn:hover{
+    background:#b71c1c;
+}
+
+.summary{
+    width:350px;
+    margin-left:auto;
+    margin-top:30px;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.summary h2{
+    color:#2e7d32;
+    margin-bottom:20px;
+}
+
+.summary p{
+    margin:15px 0;
+    font-size:18px;
+}
+
+.checkout{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    background:#2e7d32;
+    color:#fff;
+    font-size:18px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.checkout:hover{
+    background:#1b5e20;
+}
+
+.empty-cart{
+    background:#fff;
+    text-align:center;
+    padding:60px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.empty-cart h2{
+    color:#777;
+    margin-bottom:20px;
+}
+
+.shop-btn{
+    display:inline-block;
+    background:#2e7d32;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:6px;
+}
+
+@media(max-width:768px){
+
+table,
+thead,
+tbody,
+tr,
+th,
+td{
+display:block;
+}
+
+thead{
+display:none;
+}
+
+tr{
+margin-bottom:20px;
+padding:15px;
+border-bottom:1px solid #ddd;
+}
+
+td{
+text-align:right;
+position:relative;
+padding-left:50%;
+}
+
+td::before{
+content:attr(data-label);
+position:absolute;
+left:15px;
+font-weight:bold;
+text-align:left;
+}
+
+.summary{
+width:100%;
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1 class="title">🛒 Shopping Cart</h1>
+
+<% if(cart.length>0){ %>
+
+<div class="cart-box">
+
+<table>
+
+<thead>
+<tr>
+<th>Image</th>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<% cart.forEach(function(item){ %>
+
+<tr>
+
+<td data-label="Image">
+<img src="<%= item.image %>" alt="">
+</td>
+
+<td data-label="Product">
+<%= item.name %>
+</td>
+
+<td data-label="Price">
+₹<%= item.price %>
+</td>
+
+<td data-label="Quantity">
+<input type="number" value="<%= item.quantity %>" class="qty">
+</td>
+
+<td data-label="Total">
+₹<%= item.price * item.quantity %>
+</td>
+
+<td data-label="Action">
+<a href="#" class="remove-btn">Remove</a>
+</td>
+
+</tr>
+
+<% }) %>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="summary">
+
+<h2>Order Summary</h2>
+
+<p>Total Items : <strong><%= cart.length %></strong></p>
+
+<p>Grand Total : <strong>₹0.00</strong></p>
+
+<button class="checkout">
+Proceed to Checkout
+</button>
+
+</div>
+
+<% } else { %>
+
+<div class="empty-cart">
+
+<h2>Your Cart is Empty</h2>
+
+<p>Add products to your cart and start shopping.</p>
+
+<br>
+
+<a href="/product" class="shop-btn">
+Continue Shopping
+</a>
+
+</div>
+
+<% } %>
+
+</div>
+
+</body>
+</html>
+```
